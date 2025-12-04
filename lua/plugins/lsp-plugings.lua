@@ -10,6 +10,7 @@ return {
         "lua_ls",
         "ts_ls",
         "gopls",
+        "intelephense",
       },
       automatic_installation = true,
       handlers = {
@@ -72,6 +73,8 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+      -- Add signature help
+      vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, {})
 
       -- Auto-import and organize imports for Go files
       vim.api.nvim_create_autocmd("BufWritePre", {
